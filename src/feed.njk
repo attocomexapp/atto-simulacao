@@ -1,0 +1,22 @@
+---
+permalink: /blog/feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+  <title>Blog Atto Comex</title>
+  <link>{{ site.url }}/blog/</link>
+  <description>Importação da China, sem rodeio.</description>
+  <language>pt-BR</language>
+  {%- for post in collections.posts | reverse %}
+  <item>
+    <title>{{ post.data.title }}</title>
+    <link>{{ site.url }}{{ post.url }}</link>
+    <guid>{{ site.url }}{{ post.url }}</guid>
+    <pubDate>{{ post.date.toUTCString() }}</pubDate>
+    <description>{{ post.data.description }}</description>
+  </item>
+  {%- endfor %}
+</channel>
+</rss>

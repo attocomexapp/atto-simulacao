@@ -1,0 +1,462 @@
+---
+permalink: /index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atto Comex | Simule a importação do seu produto da China</title>
+<meta name="description" content="Responda em 2 minutos e receba da Atto Comex a estimativa de custo e o orçamento para importar o seu produto da China. Mais de 1.000 operações realizadas.">
+<meta property="og:title" content="Quanto custa trazer o seu produto da China?">
+<meta property="og:description" content="Simulação gratuita. A Atto Comex responde no seu WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070F1A">
+<link rel="canonical" href="{{ site.url }}/">
+<meta property="og:image" content="{{ site.url }}/assets/img/hero.jpg">
+<link rel="alternate" type="application/rss+xml" title="Blog Atto Comex" href="/blog/feed.xml">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070F1A;--card:rgba(12,24,40,.78);--alv:#F5F2DF;--muted:rgba(245,242,223,.62);--line:rgba(245,242,223,.14);--fa:#F84D14;--hz:#2084F6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--alv);font-family:"Futura PT",Jost,system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.lbl{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--fa);font-weight:400}
+@keyframes up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes kb{from{transform:scale(1.05)}to{transform:scale(1.18) translateX(-3%)}}
+@keyframes tick{to{transform:translateX(-50%)}}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.u1{animation:up 1.1s cubic-bezier(.2,.7,.2,1) both}.u2{animation:up 1.1s .15s cubic-bezier(.2,.7,.2,1) both}.u3{animation:up 1.1s .3s cubic-bezier(.2,.7,.2,1) both}
+
+/* HERO */
+.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;overflow:hidden}
+.hero-media{position:absolute;inset:0}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;filter:saturate(.6) brightness(.8);animation:kb 22s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,15,26,.75),rgba(7,15,26,.2) 40%,var(--bg))}
+nav{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 0}
+nav img{height:30px;width:auto}
+.pill{font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(245,242,223,.28);border-radius:999px;padding:11px 18px;transition:.2s}
+.pill:hover{border-color:var(--fa);color:var(--fa)}
+.hero-c{position:relative;z-index:2;margin-top:auto;padding-bottom:72px}
+.hero h1{font-size:clamp(46px,7.4vw,108px);font-weight:200;letter-spacing:-.03em;line-height:.96;margin:20px 0 26px;max-width:960px}
+.hero h1 b{font-weight:500}
+.hero p{font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:var(--muted);max-width:560px}
+.cta{display:inline-flex;align-items:center;gap:12px;margin-top:34px;background:var(--alv);color:var(--bg);border-radius:999px;padding:17px 30px;font-size:16px;font-weight:500;transition:transform .2s}
+.cta:hover{transform:translateY(-2px)}
+.ticker{border-top:1px solid rgba(245,242,223,.1);border-bottom:1px solid rgba(245,242,223,.1);overflow:hidden;padding:20px 0}
+.ticker div{display:flex;gap:56px;width:max-content;white-space:nowrap;font-size:20px;color:rgba(245,242,223,.5);animation:tick 40s linear infinite}
+.ticker i{font-style:normal;color:var(--fa)}
+
+/* SIMULADOR */
+.sim{padding:110px 0 80px;background:radial-gradient(900px 500px at 85% 0%,rgba(32,132,246,.16),transparent 60%)}
+.sim-head{text-align:center;max-width:760px;margin:0 auto 44px}
+.sim-head h2{font-size:clamp(34px,4.6vw,60px);font-weight:200;letter-spacing:-.02em;line-height:1.05;margin-top:16px}
+.sim-head h2 b{font-weight:500}
+.card{max-width:960px;margin:0 auto;border:1px solid var(--line);border-radius:28px;background:var(--card);backdrop-filter:blur(20px);padding:40px}
+.tabs{display:flex;justify-content:center;margin-bottom:34px}
+.tabs div{display:flex;border:1px solid var(--line);border-radius:999px;padding:5px}
+.tabs button{border:0;border-radius:999px;padding:12px 22px;font-size:15px;background:transparent;color:rgba(245,242,223,.7);cursor:pointer;transition:.2s}
+.tabs button[aria-selected=true]{background:var(--alv);color:var(--bg);font-weight:500}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:13px;color:rgba(245,242,223,.5)}
+.bars{display:flex;gap:6px;margin-bottom:38px}
+.bars i{flex:1;height:3px;border-radius:3px;background:rgba(245,242,223,.12);transition:background .3s}
+.bars i.on{background:var(--fa)}
+.step{animation:in .45s cubic-bezier(.2,.7,.2,1) both}
+.step h3{font-size:clamp(26px,3.2vw,38px);font-weight:300;letter-spacing:-.015em;line-height:1.15;margin-bottom:10px}
+.step .sub{font-size:17px;line-height:1.55;color:var(--muted);margin-bottom:30px}
+.f label,.q{display:block;font-size:14px;color:rgba(245,242,223,.72);margin-bottom:9px;font-weight:400}
+.f input{width:100%;background:rgba(7,15,26,.6);border:1px solid rgba(245,242,223,.18);border-radius:14px;color:var(--alv);font-size:17px;padding:16px 18px;transition:border-color .2s}
+.f input:focus{outline:none;border-color:var(--fa)}
+.f input::placeholder{color:rgba(245,242,223,.32)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid rgba(245,242,223,.16);background:transparent;color:rgba(245,242,223,.82);border-radius:999px;padding:10px 17px;font-size:15px;cursor:pointer;transition:.2s}
+.chip:hover{border-color:rgba(245,242,223,.4)}
+.chip.sel{border-color:var(--fa);background:rgba(248,77,20,.12);color:var(--alv)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.opt{text-align:left;border:1px solid var(--line);background:rgba(245,242,223,.02);border-radius:18px;padding:21px 22px;color:var(--alv);cursor:pointer;display:flex;justify-content:space-between;gap:14px;transition:.2s}
+.opt:hover{border-color:rgba(245,242,223,.38)}
+.opt b{display:block;font-size:19px;font-weight:400;margin-bottom:5px}
+.opt span{display:block;font-size:15px;line-height:1.5;color:rgba(245,242,223,.55)}
+.opt em{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(245,242,223,.28);display:grid;place-items:center}
+.opt.sel{border-color:var(--fa);background:rgba(248,77,20,.08)}
+.opt.sel b{font-weight:500}
+.opt.sel em{background:var(--fa);border-color:var(--fa)}
+.opt.sel em::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.multi{font-size:14px;color:var(--fa);margin:-16px 0 16px}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+@media(max-width:620px){.meta .lbl{font-size:10px;letter-spacing:.18em}#stepLabel{white-space:nowrap}.photos{grid-template-columns:repeat(2,1fr)}.card{padding:24px 18px}.tabs button{padding:11px 14px;font-size:14px}}
+.ph{position:relative;aspect-ratio:1;border-radius:16px;border:1px dashed rgba(245,242,223,.24);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:rgba(245,242,223,.6);font-size:14px;cursor:pointer;overflow:hidden;background:transparent;transition:.2s}
+.ph:hover{border-color:rgba(245,242,223,.5)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph .x{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:rgba(7,15,26,.75);color:#fff;border:0;cursor:pointer;font-size:14px}
+.note{margin-top:20px;padding:17px 20px;border-radius:16px;border:1px solid rgba(32,132,246,.35);background:rgba(32,132,246,.08);font-size:15px;line-height:1.55}
+.lgpd{margin-top:18px;font-size:13px;color:rgba(245,242,223,.48)}
+.err{margin-top:18px;color:#ff8a5c;font-size:15px;font-weight:400}
+.nav2{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:38px;padding-top:26px;border-top:1px solid rgba(245,242,223,.1)}
+.back{border:1px solid rgba(245,242,223,.2);background:transparent;color:var(--alv);border-radius:999px;padding:14px 22px;font-size:15px;cursor:pointer}
+.next{border:0;background:var(--fa);color:#fff;border-radius:999px;padding:16px 28px;font-size:16px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:filter .2s}
+.next:hover{filter:brightness(1.08)}
+.next[disabled]{opacity:.7;cursor:wait}
+.spin{width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+.done{text-align:center;animation:in .5s both}
+.done .ok{width:72px;height:72px;border-radius:50%;background:var(--fa);margin:0 auto 22px;display:grid;place-items:center}
+.done h3{font-size:clamp(30px,3.6vw,42px);font-weight:300;margin-bottom:12px}
+.done p{max-width:560px;margin:0 auto 30px;font-size:17px;line-height:1.6;color:var(--muted)}
+.done-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;text-align:left;margin-bottom:28px}
+.box{border:1px solid rgba(245,242,223,.12);border-radius:18px;padding:22px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(245,242,223,.08);font-size:15px}
+.row span:first-child{color:rgba(245,242,223,.55)}
+.row span:last-child{text-align:right}
+.ns{display:flex;gap:14px;padding:9px 0;font-size:16px;line-height:1.5}
+.ns i{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid rgba(245,242,223,.3);display:grid;place-items:center;font-style:normal;font-size:13px}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#05301a;border-radius:999px;padding:16px 28px;font-weight:500;font-size:16px}
+.trust{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:34px;font-size:14px;color:rgba(245,242,223,.55)}
+
+/* COMO FUNCIONA */
+.how{padding:110px 0}
+.how-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:50px}
+.how h2{font-size:clamp(38px,5vw,70px);font-weight:200;letter-spacing:-.02em;line-height:1}
+.how h2 b{font-weight:500}
+.how-head p{max-width:400px;font-size:18px;line-height:1.6;color:var(--muted)}
+.line{width:80px;height:1px;background:var(--fa);margin-bottom:28px}
+.r{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(0,1.3fr);gap:28px;padding:34px 0;border-top:1px solid rgba(245,242,223,.12);align-items:baseline;transition:background .3s}
+.r:last-child{border-bottom:1px solid rgba(245,242,223,.12)}
+.r:hover{background:rgba(245,242,223,.025)}
+.r span{font-size:14px;letter-spacing:.2em;color:var(--fa)}
+.r h4{font-size:clamp(24px,2.6vw,34px);font-weight:300}
+.r p{font-size:17px;line-height:1.6;color:var(--muted)}
+@media(max-width:760px){.r{grid-template-columns:1fr;gap:8px}}
+
+/* FAQ */
+.faq{padding:0 0 110px}
+.faq h2{font-size:clamp(34px,4vw,52px);font-weight:200;margin-bottom:30px}
+details{border-bottom:1px solid rgba(245,242,223,.12)}
+summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;font-size:21px;font-weight:300;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;font-size:30px;color:var(--fa);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 24px;max-width:760px;font-size:17px;line-height:1.65;color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.pc{display:block;transition:transform .4s cubic-bezier(.2,.7,.2,1)}.pc:hover{transform:translateY(-6px)}
+.pc-img{position:relative;aspect-ratio:16/10;border-radius:16px;background:#12233A center/cover;margin-bottom:18px}
+.pc-img{overflow:hidden}.pc-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pc-img span{position:absolute;left:14px;bottom:14px;font-size:12px;letter-spacing:.12em;background:rgba(7,15,26,.65);padding:6px 10px;border-radius:999px}
+.pc h3{font-size:23px;font-weight:300;line-height:1.3;margin-top:8px}
+footer{border-top:1px solid rgba(245,242,223,.1);padding:40px 0 110px;font-size:14px;color:rgba(245,242,223,.5)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.wa{position:fixed;right:20px;bottom:20px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .2s}
+.wa:hover{transform:scale(1.06)}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-media" id="heroMedia"><img src="/assets/img/hero.jpg" alt=""></div>
+  <div class="wrap" style="position:relative;z-index:2;width:100%">
+    <nav>
+      <img src="/assets/img/logo-atto.png" alt="Atto Comex">
+      <div style="display:flex;gap:10px;align-items:center"><a class="pill" href="/blog/">Blog</a><a class="pill wa-link" href="#" target="_blank" rel="noopener">WhatsApp (11) 99492-3475</a></div>
+    </nav>
+  </div>
+  <div class="wrap hero-c" style="width:100%">
+    <p class="lbl u1">Simulação gratuita</p>
+    <h1 class="u2">Quanto custa trazer o seu produto <b>da China?</b></h1>
+    <p class="u3">Responda em 2 minutos. A equipe da Atto devolve a estimativa de custo e o orçamento da operação no seu WhatsApp.</p>
+    <a class="cta u3" href="#simulacao">Fazer minha simulação <span>→</span></a>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div>
+  <span>Shenzhen → Santos</span><i>◆</i><span>Ningbo → Paranaguá</span><i>◆</i><span>Yiwu → Itajaí</span><i>◆</i><span>Xangai → Santos</span><i>◆</i>
+  <span>Shenzhen → Santos</span><i>◆</i><span>Ningbo → Paranaguá</span><i>◆</i><span>Yiwu → Itajaí</span><i>◆</i><span>Xangai → Santos</span><i>◆</i>
+</div></div>
+
+<section class="sim" id="simulacao">
+  <div class="wrap">
+    <div class="sim-head">
+      <p class="lbl">Simulador Atto</p>
+      <h2>Simule sua importação ou <b>planeje sua viagem à China.</b></h2>
+    </div>
+    <div class="card">
+      <div id="flowUI">
+        <div class="tabs"><div role="tablist">
+          <button type="button" role="tab" data-flow="imp" aria-selected="true">Simular importação</button>
+          <button type="button" role="tab" data-flow="cn" aria-selected="false">Viajar para a China</button>
+        </div></div>
+        <div class="meta"><span class="lbl" id="flowLabel"></span><span id="stepLabel"></span></div>
+        <div class="bars" id="bars"></div>
+        <div id="stepBox"></div>
+        <p class="err" id="err" role="alert" hidden></p>
+        <div class="nav2">
+          <button type="button" class="back" id="back">← Voltar</button>
+          <button type="button" class="next" id="next">Avançar →</button>
+        </div>
+      </div>
+      <div id="doneUI" hidden></div>
+    </div>
+    <div class="trust"><span>+1.000 operações realizadas</span><span>Na China pelo menos 2x por ano</span><span>Sem custo para simular</span></div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <div class="how-head">
+      <div><div class="line"></div><h2>Importar não começa<br><b>no embarque.</b></h2></div>
+      <p>O prejuízo aparece antes do contêiner sair da China. É nessa fase que a Atto entra.</p>
+    </div>
+    <div class="r"><span>01</span><h4>Viabilidade</h4><p>NCM, impostos e anuências como Inmetro e Anvisa checados antes de qualquer pagamento.</p></div>
+    <div class="r"><span>02</span><h4>Fornecedor validado</h4><p>Documentos e capacidade da fábrica checados. Inspeção antes do embarque quando faz sentido.</p></div>
+    <div class="r"><span>03</span><h4>Custo real por unidade</h4><p>Produto, frete, seguro, II, IPI, PIS, COFINS, ICMS e porto somados em um número só.</p></div>
+    <div class="r"><span>04</span><h4>Operação completa</h4><p>Radar, embarque, documentos e desembaraço até a entrada da nota fiscal.</p></div>
+    <a class="cta" href="#simulacao" style="background:var(--fa);color:#fff">Quero minha simulação <span>→</span></a>
+  </div>
+</section>
+
+{% if collections.posts.length %}
+<section class="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="how-head"><div><div class="line"></div><h2>Do <b>blog</b></h2></div><a class="pill" href="/blog/">Ver todos os posts →</a></div>
+    <div class="cards">
+    {% for post in collections.posts | reverse | head(3) %}
+      <a class="pc" href="{{ post.url }}">
+        <div class="pc-img">{% if post.data.capa %}<img src="{{ post.data.capa }}" alt="" loading="lazy">{% endif %}{% if post.data.video %}<span>▶ Vídeo</span>{% endif %}</div>
+        <p class="lbl">{{ post.data.categoria }}</p>
+        <h3>{{ post.data.title }}</h3>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="faq">
+  <div class="wrap" style="max-width:900px">
+    <h2>Dúvidas frequentes</h2>
+    <details><summary>A simulação tem custo?</summary><p>Não. Você responde, a equipe analisa e manda a estimativa no WhatsApp. Só existe custo se você decidir seguir com a operação.</p></details>
+    <details><summary>Preciso de CNPJ para importar?</summary><p>Sim, com CNPJ ativo e habilitação no Radar Siscomex. Se a empresa ainda não tem o Radar, a Atto cuida da habilitação.</p></details>
+    <details><summary>Dá para importar pouca quantidade?</summary><p>Dá. No container compartilhado você paga só pelo espaço que a sua carga ocupa. É o caminho mais comum para começar.</p></details>
+    <details><summary>Ainda não tenho fornecedor. Posso simular?</summary><p>Pode. Conte o produto e a Atto ajuda a encontrar e validar a fábrica na China.</p></details>
+    <details><summary>Que produtos a Atto não importa?</summary><p>Alimentos, bebidas e perecíveis. Produtos que exigem Inmetro, Anatel ou Anvisa passam por análise antes.</p></details>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Atto Comex LTDA · CNPJ 59.815.528/0001-61 · Maringá, PR</span><span><a href="/blog/">Blog</a> · @attocomex · www.attocomex.com</span></div></footer>
+
+<a class="wa wa-link" href="#" target="_blank" rel="noopener" aria-label="Falar com a Atto no WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.66c-1.98 0-3.92-.53-5.6-1.54l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.6 10.6 0 0 1 5.38 16c0-5.88 4.78-10.66 10.66-10.66 5.87 0 10.62 4.78 10.62 10.66 0 5.87-4.75 10.66-10.62 10.66zm5.84-7.98c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.5-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66 0 1.57 1.14 3.08 1.3 3.3.16.2 2.25 3.43 5.44 4.81.76.33 1.35.52 1.82.67.76.24 1.46.2 2 .12.61-.09 1.89-.77 2.15-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z"/></svg>
+</a>
+
+<script>
+(function(){
+  /* ===== CONFIGURAÇÃO ===== */
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxab4vXjE54hkOglsNFJltO62V5yJrUZlNbAACpNXk7_RkcS0owTUqy25DUz2FiiJjUvw/exec';
+  var WHATSAPP = '5511994923475';
+  var VIDEO_HERO = ''; // opcional: link de um .mp4 curto (10 a 20 s) para o fundo do topo
+
+  if (VIDEO_HERO) document.getElementById('heroMedia').innerHTML = '<video src="' + VIDEO_HERO + '" autoplay muted loop playsinline></video>';
+  var waBase = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Olá, Atto! Vim pelo site e quero falar sobre importação.');
+  document.querySelectorAll('.wa-link').forEach(function(a){ a.href = waBase; });
+
+  var q = new URLSearchParams(location.search);
+  var UTM = { utm_source: q.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : 'direto'), utm_campaign: q.get('utm_campaign') || '' };
+
+  var SEG = ['Peças para carro e moto','Brinquedos','Artigos de bebê','Casa e cozinha','Pet','Eletrônicos e acessórios','Máquinas e equipamentos','Ferramentas'];
+  var FLOWS = {
+    imp: { label:'Simulação de importação', steps:[
+      { type:'text', key:'produto', title:'Qual produto você quer importar?', sub:'Pode ser um produto, uma máquina ou um segmento inteiro.', label:'Produto ou segmento', ph:'Ex.: pastilha de freio para moto, mordedor de silicone', chips:SEG },
+      { type:'photos', title:'Fotos e detalhes do produto', sub:'Opcional, mas deixa a estimativa bem mais precisa. Até 4 fotos do produto, catálogo ou embalagem.', fields:[['medidas','Medidas ou volume','Ex.: 30 x 20 x 10 cm'],['quantidade','Quantidade','Ex.: 2.000 unidades'],['acabamento','Cor ou acabamento','Ex.: preto fosco, inox']] },
+      { type:'options', key:'fornecedor', title:'Você já tem fornecedor na China?', sub:'Assim a gente sabe se começa pela busca de fábrica ou direto pela logística.', options:[['Sim','Já tenho fornecedor cotado ou em contato'],['Não','Preciso de ajuda para encontrar e validar uma fábrica'],['Estou pesquisando','Ainda comparando catálogos e opções']] },
+      { type:'options', key:'experiencia', title:'Sua empresa já importa?', sub:'A orientação muda conforme o Radar e a experiência da empresa.', options:[['Nunca importou','Será a primeira importação da empresa'],['Algumas vezes','Já fez operações pontuais'],['Importa com frequência','Tem Radar ativo e compra com regularidade']] },
+      { type:'options', key:'valor', title:'Quanto pretende investir?', sub:'Valor aproximado da compra. Ajuda a indicar container compartilhado ou completo.', options:[['Até R$ 10 mil','Amostras e teste de produto'],['R$ 10 mil a R$ 50 mil','Normalmente container compartilhado'],['R$ 50 mil a R$ 100 mil','Lotes médios de reposição'],['R$ 100 mil a R$ 500 mil','Container compartilhado grande ou completo'],['Acima de R$ 500 mil','Volumes de indústria e atacado']] },
+      { type:'options', key:'canal', multi:true, title:'Onde você vai vender?', sub:'O canal muda a conta de margem, embalagem e giro de estoque.', options:[['Mercado Livre','Full ou coleta'],['Amazon','FBA ou FBM'],['Shopee','Loja oficial ou vendedor'],['TikTok Shop','Venda pelas redes'],['Loja física','Ponto de venda ou distribuição'],['E-commerce próprio','Site da sua marca'],['Atacado','Revenda B2B'],['Indústria','Uso na própria produção']] },
+      { type:'contact', title:'Para onde enviamos sua simulação?', sub:'A equipe de comércio exterior da Atto responde com a estimativa de custo e o orçamento.' }
+    ]},
+    cn: { label:'Missão China', steps:[
+      { type:'options', key:'visitou', title:'Você já esteve na China?', sub:'Assim a gente dimensiona o apoio desde a chegada.', options:[['Não, seria a primeira vez','Preciso de orientação desde o visto até as visitas'],['Sim, já estive','Quero aproveitar melhor feiras, contatos e visitas']] },
+      { type:'options', key:'objetivo', title:'Qual o principal objetivo da viagem?', sub:'Define a agenda e as regiões que entram no roteiro.', options:[['Visitar fábricas','Conhecer a produção e negociar direto com o fabricante'],['Feiras como a Canton Fair','Ver centenas de fornecedores em poucos dias'],['Pesquisar produtos','Encontrar novidades antes de chegarem ao Brasil'],['Marca própria','Desenvolver embalagem e produto exclusivos']] },
+      { type:'text', key:'segmento', title:'Quais produtos você procura?', sub:'Conte o segmento para a gente montar o roteiro certo.', label:'Segmento ou produtos', ph:'Ex.: autopeças, utilidades, artigos de bebê', chips:SEG },
+      { type:'options', key:'idioma', note:true, title:'Como está seu inglês?', sub:'Só para planejar o apoio com idioma nas reuniões.', options:[['Falo com segurança','Conduzo negociações sozinho'],['Básico ou intermediário','Entendo, mas prefiro apoio nas negociações'],['Não falo','Preciso de tudo em português']] },
+      { type:'contact', timing:['Próximos 3 meses','Em até 6 meses','Em até 12 meses','Ainda avaliando'], title:'Quando pretende ir e como falamos com você?', sub:'A Atto responde com as próximas datas e o roteiro sugerido.' }
+    ]}
+  };
+  var LABELS = { produto:'Produto', medidas:'Medidas', quantidade:'Quantidade', acabamento:'Acabamento', fornecedor:'Fornecedor', experiencia:'Experiência', valor:'Investimento', canal:'Canal', visitou:'Já foi à China', objetivo:'Objetivo', segmento:'Segmento', idioma:'Inglês', quando:'Quando', nome:'Nome', whatsapp:'WhatsApp', empresa:'Empresa', email:'E-mail' };
+
+  var S = { flow:'imp', i:0, A:{ imp:{}, cn:{} }, fotos:[] };
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = function(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+  function track(ev, data){ window.dataLayer = window.dataLayer || []; window.dataLayer.push(Object.assign({ event: ev }, data || {})); if (ev === 'lead_enviado' && typeof fbq === 'function') fbq('track', 'Lead'); }
+
+  function field(key, label, ph, type){
+    return '<div class="f"><label for="f-' + key + '">' + label + '</label><input id="f-' + key + '" data-k="' + key + '" type="' + (type || 'text') + '" placeholder="' + esc(ph) + '" value="' + esc(S.A[S.flow][key] || '') + '"' + (type === 'tel' ? ' inputmode="tel" autocomplete="tel"' : '') + '></div>';
+  }
+
+  function render(){
+    var F = FLOWS[S.flow], d = F.steps[S.i], A = S.A[S.flow], h = '';
+    document.querySelectorAll('.tabs button').forEach(function(b){ b.setAttribute('aria-selected', b.dataset.flow === S.flow); });
+    $('flowLabel').textContent = F.label;
+    $('stepLabel').textContent = 'Etapa ' + (S.i + 1) + ' de ' + F.steps.length;
+    $('bars').innerHTML = F.steps.map(function(_, k){ return '<i class="' + (k <= S.i ? 'on' : '') + '"></i>'; }).join('');
+    h += '<div class="step"><h3>' + d.title + '</h3><p class="sub">' + d.sub + '</p>';
+    if (d.type === 'text'){
+      h += field(d.key, d.label, d.ph) + '<p class="q" style="margin:24px 0 12px">Mais procurados</p><div class="chips">' +
+        d.chips.map(function(c){ return '<button type="button" class="chip' + (A[d.key] === c ? ' sel' : '') + '" data-chip="' + esc(c) + '">' + c + '</button>'; }).join('') + '</div>';
+    }
+    if (d.type === 'photos'){
+      h += '<div class="meta" style="margin-bottom:12px"><span>Fotos do produto</span><span>' + S.fotos.length + ' de 4</span></div><div class="photos">';
+      for (var n = 0; n < 4; n++){
+        var f = S.fotos[n];
+        h += f ? '<div class="ph"><img src="' + f.base64 + '" alt="Foto ' + (n+1) + '"><button type="button" class="x" data-rm="' + n + '" aria-label="Remover foto">✕</button></div>'
+               : '<label class="ph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg>Adicionar foto<input type="file" accept="image/*" multiple hidden data-file></label>';
+      }
+      h += '</div><div class="grid3">' + d.fields.map(function(x){ return field(x[0], x[1], x[2]); }).join('') + '</div>';
+    }
+    if (d.type === 'options'){
+      if (d.multi) h += '<p class="multi">Pode marcar mais de um</p>';
+      h += '<div class="opts">' + d.options.map(function(o){
+        var cur = A[d.key], sel = d.multi ? (cur || []).indexOf(o[0]) > -1 : cur === o[0];
+        return '<button type="button" class="opt' + (sel ? ' sel' : '') + '" aria-pressed="' + sel + '" data-opt="' + esc(o[0]) + '"><div><b>' + o[0] + '</b><span>' + o[1] + '</span></div><em></em></button>';
+      }).join('') + '</div>';
+      if (d.note) h += '<p class="note">Não fala inglês nem mandarim? Sem problema. A equipe da Atto organiza o apoio com idioma nas reuniões e visitas.</p>';
+    }
+    if (d.type === 'contact'){
+      if (d.timing) h += '<p class="q">Quando pretende viajar</p><div class="chips" style="margin-bottom:26px">' + d.timing.map(function(t){ return '<button type="button" class="chip' + (A.quando === t ? ' sel' : '') + '" data-when="' + esc(t) + '">' + t + '</button>'; }).join('') + '</div>';
+      h += '<div class="grid3">' + field('nome','Seu nome','Nome e sobrenome') + field('whatsapp','WhatsApp com DDD','(44) 99999-9999','tel') + field('empresa','Empresa','Razão social ou marca') + '</div>';
+      h += '<div class="grid3" style="margin-top:16px">' + field('email','E-mail (opcional)','voce@empresa.com.br','email') + '</div>';
+      h += '<p class="lgpd">Seus dados são usados só para responder esta simulação, conforme a LGPD.</p>';
+    }
+    $('stepBox').innerHTML = h + '</div>';
+    $('back').style.visibility = S.i ? 'visible' : 'hidden';
+    $('next').innerHTML = S.i === F.steps.length - 1 ? (S.flow === 'imp' ? 'Quero receber minha simulação →' : 'Quero receber meu roteiro →') : 'Avançar →';
+    $('err').hidden = true;
+  }
+
+  function setA(k, v){ S.A[S.flow][k] = v; }
+
+  $('stepBox').addEventListener('input', function(e){
+    var k = e.target.dataset.k; if (!k) return;
+    if (e.target.type === 'tel'){
+      var dg = e.target.value.replace(/\D/g,'').slice(0,11), o = dg;
+      if (dg.length > 2) o = '(' + dg.slice(0,2) + ') ' + dg.slice(2);
+      if (dg.length > 7) o = '(' + dg.slice(0,2) + ') ' + dg.slice(2, dg.length-4) + '-' + dg.slice(-4);
+      e.target.value = o;
+    }
+    setA(k, e.target.value);
+    if (S.i === 0 && !S.started){ S.started = true; track('simulacao_inicio', { fluxo: S.flow }); }
+  });
+
+  $('stepBox').addEventListener('click', function(e){
+    var t = e.target.closest('button'); if (!t) return;
+    var d = FLOWS[S.flow].steps[S.i], A = S.A[S.flow];
+    if (t.dataset.chip){ setA(d.key, t.dataset.chip); render(); }
+    else if (t.dataset.when){ setA('quando', t.dataset.when); render(); }
+    else if (t.dataset.rm){ S.fotos.splice(+t.dataset.rm, 1); render(); }
+    else if (t.dataset.opt){
+      var v = t.dataset.opt;
+      if (d.multi){ var arr = A[d.key] || []; setA(d.key, arr.indexOf(v) > -1 ? arr.filter(function(x){ return x !== v; }) : arr.concat([v])); render(); }
+      else { setA(d.key, v); render(); setTimeout(function(){ if (FLOWS[S.flow].steps[S.i] === d) go(1); }, 260); }
+    }
+  });
+
+  $('stepBox').addEventListener('change', function(e){
+    if (!e.target.hasAttribute('data-file')) return;
+    var files = Array.prototype.slice.call(e.target.files, 0, 4 - S.fotos.length);
+    Promise.all(files.map(shrink)).then(function(list){ S.fotos = S.fotos.concat(list.filter(Boolean)); render(); });
+  });
+
+  function shrink(file){
+    return new Promise(function(res){
+      var r = new FileReader();
+      r.onload = function(){
+        var img = new Image();
+        img.onload = function(){
+          var m = 1280, w = img.width, h = img.height, s = Math.min(1, m / Math.max(w, h));
+          var c = document.createElement('canvas'); c.width = Math.round(w * s); c.height = Math.round(h * s);
+          c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+          res({ base64: c.toDataURL('image/jpeg', .78), mime: 'image/jpeg' });
+        };
+        img.onerror = function(){ res(null); };
+        img.src = r.result;
+      };
+      r.readAsDataURL(file);
+    });
+  }
+
+  function valid(d, A){
+    if (d.type === 'text') return (A[d.key] || '').trim().length > 1 || 'Conte qual é o produto ou segmento.';
+    if (d.type === 'options') return (d.multi ? (A[d.key] || []).length > 0 : !!A[d.key]) || 'Escolha uma opção para continuar.';
+    if (d.type === 'contact'){
+      if (d.timing && !A.quando) return 'Escolha quando pretende viajar.';
+      if ((A.nome || '').trim().length < 2) return 'Informe seu nome.';
+      if ((A.whatsapp || '').replace(/\D/g,'').length < 10) return 'Informe um WhatsApp válido com DDD.';
+      if ((A.empresa || '').trim().length < 2) return 'Informe o nome da empresa.';
+    }
+    return true;
+  }
+
+  function go(dir){
+    var F = FLOWS[S.flow], d = F.steps[S.i];
+    if (dir > 0){
+      var v = valid(d, S.A[S.flow]);
+      if (v !== true){ $('err').textContent = v; $('err').hidden = false; return; }
+      if (S.i === F.steps.length - 1) return submit();
+      track('simulacao_etapa', { fluxo: S.flow, etapa: S.i + 1 });
+    }
+    S.i = Math.max(0, S.i + dir); render();
+    var card = document.querySelector('.card'); if (card.getBoundingClientRect().top < 0) card.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  $('next').addEventListener('click', function(){ go(1); });
+  $('back').addEventListener('click', function(){ go(-1); });
+  $('stepBox').addEventListener('keydown', function(e){ if (e.key === 'Enter' && e.target.tagName === 'INPUT'){ e.preventDefault(); go(1); } });
+  document.querySelectorAll('.tabs button').forEach(function(b){ b.addEventListener('click', function(){ S.flow = b.dataset.flow; S.i = 0; render(); }); });
+
+  function submit(){
+    var A = S.A[S.flow], btn = $('next');
+    btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Enviando';
+    var payload = Object.assign({ tipo: S.flow, pagina: location.href }, UTM, A);
+    if (S.flow === 'imp' && S.fotos.length) payload.fotos = S.fotos;
+    var msg = 'Olá, Atto! ' + (S.flow === 'imp' ? 'Acabei de fazer a simulação de importação no site.' : 'Quero planejar uma viagem à China com a Atto.') + '\n\n' +
+      Object.keys(A).filter(function(k){ return A[k] && (A[k].length || A[k] === true); }).map(function(k){ return '*' + (LABELS[k] || k) + ':* ' + (Array.isArray(A[k]) ? A[k].join(', ') : A[k]); }).join('\n');
+    var waUrl = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+    var finish = function(ok){ track('lead_enviado', { fluxo: S.flow }); showDone(ok, waUrl); };
+    fetch(ENDPOINT, { method:'POST', mode:'no-cors', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+      .then(function(){ finish(true); }).catch(function(){ finish(false); });
+  }
+
+  function showDone(ok, waUrl){
+    var A = S.A[S.flow];
+    var keys = S.flow === 'imp' ? ['produto','quantidade','fornecedor','experiencia','valor','canal'] : ['visitou','objetivo','segmento','idioma','quando'];
+    var rows = keys.filter(function(k){ return A[k] && A[k].length; }).map(function(k){ return '<div class="row"><span>' + LABELS[k] + '</span><span>' + esc(Array.isArray(A[k]) ? A[k].join(', ') : A[k]) + '</span></div>'; }).join('');
+    if (S.flow === 'imp' && S.fotos.length) rows += '<div class="row"><span>Fotos</span><span>' + S.fotos.length + ' enviada(s)</span></div>';
+    var steps = S.flow === 'imp'
+      ? ['A equipe analisa NCM, impostos, anuências e frete do seu produto.', 'Você recebe a estimativa de custo no WhatsApp.', 'Se fizer sentido, a Atto monta o orçamento completo da operação.']
+      : ['A equipe avalia seu objetivo e o segmento.', 'Você recebe as próximas datas e um roteiro sugerido.', 'Combinamos os detalhes da viagem pelo WhatsApp.'];
+    var first = esc((A.nome || '').trim().split(' ')[0]);
+    $('doneUI').innerHTML = '<div class="done"><div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div>' +
+      '<h3>' + (ok ? 'Recebemos sua simulação' : 'Quase lá') + (first ? ', ' + first : '') + '.</h3>' +
+      '<p>' + (ok ? 'A equipe da Atto já foi avisada e responde no seu WhatsApp. Se quiser adiantar a conversa, toque no botão abaixo.' : 'Não conseguimos registrar agora. Toque no botão abaixo para enviar suas respostas direto no WhatsApp da Atto.') + '</p>' +
+      '<div class="done-grid"><div class="box"><p class="lbl" style="margin-bottom:12px">Suas respostas</p>' + rows + '</div><div class="box"><p class="lbl" style="margin-bottom:12px">O que acontece agora</p>' +
+      steps.map(function(t, i){ return '<div class="ns"><i>' + (i+1) + '</i><span>' + t + '</span></div>'; }).join('') + '</div></div>' +
+      '<a class="wa-btn" href="' + waUrl + '" target="_blank" rel="noopener">' + (ok ? 'Falar agora no WhatsApp' : 'Enviar no WhatsApp') + '</a>' +
+      '<p style="margin:22px auto 0"><button type="button" class="back" id="again">Fazer outra simulação</button></p></div>';
+    $('flowUI').hidden = true; $('doneUI').hidden = false;
+    $('again').addEventListener('click', function(){ S.A[S.flow] = {}; S.fotos = []; S.i = 0; S.started = false; $('next').disabled = false; $('doneUI').hidden = true; $('flowUI').hidden = false; render(); });
+    document.querySelector('.card').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>

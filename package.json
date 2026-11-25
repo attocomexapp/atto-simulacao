@@ -1,0 +1,14 @@
+{
+  "name": "atto-simulacao",
+  "version": "1.0.0",
+  "description": "Site de leads e blog da Atto Comex",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  },
+  "private": true,
+  "type": "module"
+}

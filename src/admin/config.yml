@@ -1,0 +1,63 @@
+# Painel do blog Atto Comex (Sveltia CMS)
+backend:
+  name: github
+  repo: attocomexapp/atto-simulacao
+  branch: main
+  commit_messages:
+    create: "Novo post: {{slug}}"
+    update: "Atualiza post: {{slug}}"
+    delete: "Remove post: {{slug}}"
+    uploadMedia: "Envia arquivo: {{path}}"
+
+site_url: https://simulacao.attocomex.com
+display_url: https://simulacao.attocomex.com
+locale: pt
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: posts
+    label: Posts do blog
+    label_singular: Post
+    folder: src/blog/posts
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    sortable_fields: [date, title]
+    summary: "{{title}} · {{date | date('DD/MM/YYYY')}}"
+    fields:
+      - { label: Título, name: title, widget: string, hint: "Use a palavra-chave principal. Ex.: Como importar brinquedos da China" }
+      - { label: "Resumo (aparece no Google)", name: description, widget: text, hint: "Entre 120 e 160 caracteres. Fale o benefício e a palavra-chave." }
+      - { label: Data, name: date, widget: datetime, format: "YYYY-MM-DD", time_format: false }
+      - label: Categoria
+        name: categoria
+        widget: select
+        options: ["Primeira importação", "Custos e impostos", "Fornecedores", "Missão China", "Regras e anuências", "Bastidores", "Nichos"]
+        default: "Primeira importação"
+      - { label: "Imagem de capa", name: capa, widget: image, required: false }
+      - { label: "Texto alternativo da capa", name: capa_alt, widget: string, required: false, hint: "Descreva a imagem. Ajuda no Google Imagens." }
+      - label: "Vídeo principal"
+        name: video
+        widget: file
+        required: false
+        hint: "Cole um link do YouTube (vídeo ou Shorts) ou envie um .mp4 de até 2 minutos. Aparece no topo do post, no lugar da capa."
+      - label: "Formato do vídeo"
+        name: video_formato
+        widget: select
+        options: [{ label: "Horizontal (16:9)", value: horizontal }, { label: "Vertical (9:16, Reels/Shorts)", value: vertical }]
+        default: horizontal
+        required: false
+      - label: Texto do post
+        name: body
+        widget: markdown
+        hint: "Para colocar outro vídeo no meio do texto, cole o link do YouTube sozinho numa linha."
+      - label: "Galeria de fotos"
+        name: galeria
+        widget: list
+        required: false
+        fields:
+          - { label: Imagem, name: imagem, widget: image }
+          - { label: Legenda, name: legenda, widget: string, required: false }
+      - { label: "Título para o Google (opcional)", name: seo_titulo, widget: string, required: false, hint: "Se vazio, usa o título do post. Até 60 caracteres." }
+      - { label: "Salvar como rascunho (não publica)", name: rascunho, widget: boolean, default: false, required: false }

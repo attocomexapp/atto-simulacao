@@ -1,0 +1,40 @@
+---
+layout: base.njk
+---
+{% block head %}{% endblock %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": "{{ page.date | isoDate }}",
+  "image": "{{ site.url }}{{ capa or '/assets/img/hero.jpg' }}",
+  "author": { "@type": "Organization", "name": "Atto Comex" },
+  "publisher": { "@type": "Organization", "name": "Atto Comex", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/img/logo-atto.png" } },
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+}
+</script>
+<article class="post">
+  <div class="wrap narrow head">
+    <p class="lbl">{{ categoria }} · {{ page.date | dataBR }} · {{ content | tempoLeitura }} min</p>
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ description }}</p>
+  </div>
+
+  {% if video %}
+  <div class="wrap {{ 'narrow' if video_formato == 'vertical' else 'wide' }}">{{ video | videoEmbed(video_formato) | safe }}</div>
+  {% elif capa %}
+  <div class="wrap wide"><img class="cover" src="{{ capa }}" alt="{{ capa_alt or title }}"></div>
+  {% endif %}
+
+  <div class="wrap narrow body">
+    {{ content | safe }}
+  </div>
+
+  {% if galeria and galeria.length %}
+  <div class="wrap wide gallery">
+    {% for g in galeria %}<img src="{{ g.imagem or g }}" alt="{{ g.legenda or title }}" loading="lazy">{% endfor %}
+  </div>
+  {% endif %}
+</article>

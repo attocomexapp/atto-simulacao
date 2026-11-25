@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Blog sobre importação da China
+description: Guias, bastidores e novidades sobre importar da China, com quem faz isso todos os dias. Por Atto Comex.
+permalink: /blog/
+eleventyExcludeFromCollections: true
+---
+<section class="blog-head">
+  <div class="wrap">
+    <p class="lbl">Blog Atto Comex</p>
+    <h1>Importação da China, <b>sem rodeio.</b></h1>
+    <p class="lead">Guias, bastidores das viagens e o que muda nas regras de importação.</p>
+  </div>
+</section>
+<section class="wrap list">
+  {% set posts = collections.posts | reverse %}
+  {% if posts.length %}
+  <div class="cards">
+    {% for post in posts %}
+    <a class="pc" href="{{ post.url }}">
+      <div class="pc-img">{% if post.data.capa %}<img src="{{ post.data.capa }}" alt="" loading="lazy">{% endif %}{% if post.data.video %}<span>▶ Vídeo{% if post.data.video_formato == 'vertical' %} vertical{% endif %}</span>{% endif %}</div>
+      <p class="lbl">{{ post.data.categoria }} · {{ post.date | dataBR }}</p>
+      <h3>{{ post.data.title }}</h3>
+      <p class="ex">{{ post.data.description }}</p>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="lead">Os primeiros posts chegam em breve.</p>
+  {% endif %}
+</section>
